@@ -22,6 +22,7 @@ class Hyperdeck:
         self.logger = logging.getLogger(__name__)
 
         self._reader_thread = Thread(target=self._reader)
+        self._reader_thread.daemon = True
         self._reader_thread.start()
 
         # Device Info
